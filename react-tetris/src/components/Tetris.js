@@ -15,7 +15,7 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const [player, updatePlayerPos, resetPlayer] = usePlayer();
+  const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage] = useStage(player, resetPlayer);
 
   const movePlayer = (dir) => {
@@ -40,7 +40,7 @@ const Tetris = () => {
         setDropTime(null);
       }
 
-      // y축의 가장 밑에 도달하였을때 collided 처리
+      // y축의 가장 밑에 도달하였을때 이동안하고 동결시키기
 
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
@@ -61,6 +61,9 @@ const Tetris = () => {
       } else if (keyCode === 40) {
         // down arrow
         dropPlayer(1);
+      } else if (keyCode === 38) {
+        // up arrow  1로 하면 시계방향
+        playerRotate(stage, 1);
       }
     }
   };

@@ -10,6 +10,25 @@ export const usePlayer = () => {
     collided: false,
   });
 
+  const rotate = (matrix, dir) => {
+    // 행 과 열을 바꿔주면 회전하게 됨
+    const rotatedTetro = matrix.map((_, index) =>
+      matrix.map((col) => col[index]),
+    );
+
+    if (dir > 0) {
+      return rotatedTetro.map((row) => row.reverse());
+    }
+    return rotatedTetro.reverse();
+  };
+
+  const playerRotate = (stage, dir) => {
+    const clonedPlayer = JSON.parse(JSON.stringify(player)); // shallow copy를 위함
+    clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
+
+    setPlayer(clonedPlayer);
+  };
+
   const updatePlayerPos = ({ x, y, collided }) => {
     setPlayer((prev) => ({
       ...prev,
@@ -26,5 +45,5 @@ export const usePlayer = () => {
     });
   }, []);
 
-  return [player, updatePlayerPos, resetPlayer];
+  return [player, updatePlayerPos, resetPlayer, playerRotate];
 };
