@@ -16,7 +16,7 @@ const Tetris = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
-  const [stage, setStage] = useStage(player);
+  const [stage, setStage] = useStage(player, resetPlayer);
 
   const movePlayer = (dir) => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -27,11 +27,22 @@ const Tetris = () => {
   const startGame = () => {
     setStage(createStage());
     resetPlayer();
+    setGameOver(false);
   };
 
   const drop = () => {
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
       updatePlayerPos({ x: 0, y: 1, collided: false });
+    } else {
+      if (player.pos.y < 1) {
+        // player의 y값이 1보다 작아진다는 건 게임판의 맨 위까지 도달했다는 것 => 게임 오버
+        setGameOver(true);
+        setDropTime(null);
+      }
+
+      // y축의 가장 밑에 도달하였을때 collided 처리
+
+      updatePlayerPos({ x: 0, y: 0, collided: true });
     }
   };
 
