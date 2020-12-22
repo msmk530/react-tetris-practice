@@ -11,7 +11,7 @@ import StartButton from './StartButton';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
-  const [gameOver, setGameOver] = useStage(false);
+  const [gameOver, setGameOver] = useState(false);
 
   const [player] = usePlayer();
   const [stage, setStage] = useStage(player);
