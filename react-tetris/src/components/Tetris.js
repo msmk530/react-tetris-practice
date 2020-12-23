@@ -72,19 +72,23 @@ const Tetris = () => {
     drop();
   };
 
-  const move = ({ keyCode }) => {
+  const move = (e) => {
+    console.log(e.keyCode);
     if (!gameOver) {
-      if (keyCode === 37) {
+      if (e.keyCode === 37) {
         // left arrow
         movePlayer(-1);
-      } else if (keyCode === 39) {
+      } else if (e.keyCode === 39) {
         // right arrow
         movePlayer(1);
-      } else if (keyCode === 40) {
+      } else if (e.keyCode === 40) {
         // down arrow
         dropPlayer(1);
-      } else if (keyCode === 38) {
+      } else if (e.keyCode === 38) {
         // up arrow  1로 하면 시계방향
+        playerRotate(stage, 1);
+      } else if (e.keyCode === 32) {
+        e.preventDefault();
         playerRotate(stage, 1);
       }
     }
