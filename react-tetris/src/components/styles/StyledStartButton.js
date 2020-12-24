@@ -14,4 +14,10 @@ export const StyledStartButton = styled.button`
   font-size: 1rem;
   outline: none;
   cursor: pointer;
+
+  :hover {
+    border: 4px solid #333;
+    background-color: black;
+    color: '#999';
+  }
 `;
