@@ -26,3 +26,14 @@ export const StyledTetris = styled.div`
     padding: 0 20px;
   }
 `;
+
+export const StyledTitle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  color: white;
+  font-size: 1.5rem;
+  font-family: Pixel, Arial, Helvetica, sans-serif;
+`;

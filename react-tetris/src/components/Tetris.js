@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import { createStage, checkCollision } from '../gameHelpers';
 
-import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
+import {
+  StyledTetrisWrapper,
+  StyledTetris,
+  StyledTitle,
+} from './styles/StyledTetris';
 
 import { useInterval } from '../hooks/useInterval';
 import { useGameStatus } from '../hooks/useGameStatus';
@@ -114,6 +118,7 @@ const Tetris = () => {
       onKeyDown={(e) => move(e)}
       onKeyUp={keyUp}
     >
+      <StyledTitle>Minseob Tetris</StyledTitle>
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
