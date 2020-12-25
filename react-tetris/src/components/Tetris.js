@@ -78,7 +78,7 @@ const Tetris = () => {
 
   const directDrop = () => {
     updatePlayerPos({
-      x: player.pos.x,
+      x: 0,
       y: 20 - player.pos.y - player.tetromino.length,
       collided: false,
     });
@@ -98,12 +98,11 @@ const Tetris = () => {
       } else if (e.keyCode === 38) {
         // up arrow  1로 하면 시계방향
         playerRotate(stage, 1);
+      } else if (e.keyCode === 32) {
+        e.preventDefault();
+        directDrop();
+        setDropTime(1000 / (level + 1) + 200);
       }
-      // else if (e.keyCode === 32) {
-      //   e.preventDefault();
-      //   directDrop();
-      //   setDropTime(1000 / (level + 1) + 200);
-      // }
     }
   };
 
