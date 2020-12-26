@@ -10,6 +10,14 @@
 ### 구현사항
 1인 play가 가능한 Tetris game. <br>
 
+### 조작법
+
+⬅️ : Tetromino 좌로 한칸 이동 <br>
+➡️ : Tetromino 우로 한칸 이동 <br>
+⬇️ : Tetromino 밑으로 한칸 이동 <br>
+⬆️ : Tetromino 90도 회전 <br>
+SpaceBar : Tetromino Direct Drop<br>
+
 
 ### 📚 기술스택
 
