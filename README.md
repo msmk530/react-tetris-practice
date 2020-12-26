@@ -5,7 +5,7 @@
 </p>
 
 ### 🔗 배포URL
-[Tetris Game Site](https://5fe42ecea33d90c212e214b4--blissful-noether-103aed.netlify.app/)
+[Tetris Game Site](https://5fe74362ee5a2f2ac6f7a72e--blissful-noether-103aed.netlify.app/)
 
 ### 구현사항
 1인 play가 가능한 Tetris game. <br>
