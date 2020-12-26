@@ -1,5 +1,4 @@
-export const STAGE_WIDTH = 12;
-export const STAGE_HEIGHT = 20;
+import { STAGE_HEIGHT, STAGE_WIDTH } from '../util/constant';
 
 export const createStage = () =>
   Array.from(Array(STAGE_HEIGHT), () =>
