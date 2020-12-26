@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-import { createStage, checkCollision } from '../service/gameHelpers';
+import {
+  createStage,
+  checkCollision,
+  STAGE_HEIGHT,
+} from '../service/gameHelpers';
 
 import {
   StyledTetrisWrapper,
@@ -77,11 +81,12 @@ const Tetris = () => {
   };
 
   const directDrop = () => {
-    updatePlayerPos({
-      x: 0,
-      y: 20 - player.pos.y - player.tetromino.length,
-      collided: false,
-    });
+    let height = player.pos.y + player.tetromino.length;
+    while (!checkCollision(player, stage, { x: 0, y: height })) {
+      height++;
+    }
+
+    updatePlayerPos({ x: 0, y: height - 1, collided: true });
   };
 
   const move = (e) => {
