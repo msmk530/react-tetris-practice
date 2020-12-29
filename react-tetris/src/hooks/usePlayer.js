@@ -12,7 +12,6 @@ export const usePlayer = () => {
   });
 
   const rotate = (matrix, dir) => {
-    // 행 과 열을 바꿔주면 회전하게 됨
     const rotatedTetro = matrix.map((_, index) =>
       matrix.map((col) => col[index]),
     );

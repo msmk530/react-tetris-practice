@@ -53,12 +53,9 @@ const Tetris = () => {
       updatePlayerPos({ x: 0, y: 1, collided: false });
     } else {
       if (player.pos.y < 1) {
-        // player의 y값이 1보다 작아진다는 건 게임판의 맨 위까지 도달했다는 것 => 게임 오버
         setGameOver(true);
         setDropTime(null);
       }
-
-      // y축의 가장 밑에 도달하였을때 이동안하고 동결시키기
 
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
@@ -88,16 +85,12 @@ const Tetris = () => {
   const move = (e) => {
     if (!gameOver) {
       if (e.keyCode === 37) {
-        // left arrow
         movePlayer(-1);
       } else if (e.keyCode === 39) {
-        // right arrow
         movePlayer(1);
       } else if (e.keyCode === 40) {
-        // down arrow
         dropPlayer();
       } else if (e.keyCode === 38) {
-        // up arrow  1로 하면 시계방향
         playerRotate(stage, 1);
       } else if (e.keyCode === 32) {
         e.preventDefault();
