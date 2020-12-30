@@ -7,6 +7,8 @@
 ### 🔗 배포URL
 [Tetris Game Site](https://5fe74362ee5a2f2ac6f7a72e--blissful-noether-103aed.netlify.app/)
 
+### 📝 구현과정 [Wiki](https://github.com/msmk530/react-tetris-practice/wiki)
+
 ### 구현사항
 1인 play가 가능한 Tetris game. <br>
 
@@ -16,7 +18,7 @@
 ➡️ : Tetromino 우로 한칸 이동 <br>
 ⬇️ : Tetromino 밑으로 한칸 이동 <br>
 ⬆️ : Tetromino 90도 회전 <br>
-SpaceBar : Tetromino Direct Drop<br>
+`SpaceBar` : Tetromino Direct Drop<br>
 
 
 ### 📚 기술스택
